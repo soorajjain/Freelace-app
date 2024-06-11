@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Freelace-app/static/css/main.72322727.css",
+    "main.js": "/Freelace-app/static/js/main.fc5edde0.js",
+    "static/js/453.4cd24f5f.chunk.js": "/Freelace-app/static/js/453.4cd24f5f.chunk.js",
+    "static/media/logo.png": "/Freelace-app/static/media/logo.831615758dac1c5f181c.png",
+    "index.html": "/Freelace-app/index.html",
+    "main.72322727.css.map": "/Freelace-app/static/css/main.72322727.css.map",
+    "main.fc5edde0.js.map": "/Freelace-app/static/js/main.fc5edde0.js.map",
+    "453.4cd24f5f.chunk.js.map": "/Freelace-app/static/js/453.4cd24f5f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.72322727.css",
+    "static/js/main.fc5edde0.js"
+  ]
+}
