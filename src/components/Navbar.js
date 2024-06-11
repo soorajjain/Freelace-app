@@ -1,5 +1,7 @@
 import React from "react";
 import logo from "../assets/logo.png";
+// import Login from "../pages/Login";
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -17,12 +19,11 @@ function Navbar() {
           <button className="border border-white rounded-md p-2 px-3 ">
             post job
           </button>
-          <button className="border  border-red-600 bg-red-600 rounded-md p-2 px-3 hidden md:block ">
+          <Link to="/login"
+            className="border  border-red-600 bg-red-600 rounded-md p-2 px-3 hidden md:block "
+          >
             Login
-          </button>
-          <button className="border border-red-600 bg-red-600  rounded-md p-2 px-3 hidden md:block">
-            signUp
-          </button>
+          </Link>
         </div>
       </nav>
     </div>
