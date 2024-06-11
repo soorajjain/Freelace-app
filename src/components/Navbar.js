@@ -6,7 +6,7 @@ function Navbar() {
     <div>
       <nav className="Navbar max-w-[1170px] text-white mx-auto flex justify-between py-8 font-bold">
         <div className="flex gap-10 items-center">
-          <div className="px-10">
+          <div className="px-1">
             <img src={logo} className="w-[200px]" alt="logo" />
           </div>
           <h1 className="hidden md:block">Find Freelancer</h1>
