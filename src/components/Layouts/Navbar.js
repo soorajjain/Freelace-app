@@ -23,13 +23,13 @@ function Navbar(props) {
         <div className="flex gap-6 items-center mx-4">
           <Link
             to="/find_jobs"
-            className="border border-white rounded-md p-2 px-3 "
+            className="border border-white rounded-md p-2 px-3 hover:bg-white hover:text-black hover:border-black"
           >
             post job
           </Link>
           <Link
             to="/login"
-            className="border  border-red-600 bg-red-600 rounded-md p-2 px-3 hidden md:block "
+            className="border  border-red-900 bg-red-700 hover:bg-red-500 rounded-md p-2 px-6 hidden md:block "
           >
             Login
           </Link>

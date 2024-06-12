@@ -18,7 +18,7 @@ function Employers() {
           </div>
           <Link
             to="/login"
-            className="border flex items-start border-red-600 bg-red-600 rounded-md p-2 px-3 md:block my-7 text-l"
+            className="border flex items-start border-red-900 bg-red-700 hover:bg-red-500 rounded-md p-2 px-5 md:block my-7 text-l"
           >
             Get Started
           </Link>

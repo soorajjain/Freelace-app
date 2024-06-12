@@ -4,7 +4,7 @@ import Freelancers from "./Freelancers";
 // import { Link } from "react-router-dom";
 
 function Howitwork() {
-  const [toggle, setToggle] = useState("Employers");
+  const [toggle, setToggle] = useState("Freelancers");
   return (
     <div>
       <div className="w-[100%] border-t-[1px] border-t-[#605d5d]  py-[5px] text-white">

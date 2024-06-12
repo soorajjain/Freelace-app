@@ -51,7 +51,7 @@ function LoginSignup() {
             SignUp
           </button>
           <button
-            className="border border-red-500 bg-red-700 p-4 rounded-3xl pt-3 px-7 hover:bg-red-400 text-l"
+            className="border border-red-500 bg-red-700 p-4 rounded-3xl pt-3 px-7 hover:bg-red-500 text-l"
             onClick={() => {
               setAction("Login");
             }}
