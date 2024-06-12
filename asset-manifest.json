@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/Freelace-app/static/css/main.d9b46d62.css",
-    "main.js": "/Freelace-app/static/js/main.9bb8ce66.js",
+    "main.css": "/Freelace-app/static/css/main.d35d98c7.css",
+    "main.js": "/Freelace-app/static/js/main.d7b13b4b.js",
     "static/js/453.4cd24f5f.chunk.js": "/Freelace-app/static/js/453.4cd24f5f.chunk.js",
     "static/media/hero-sec.png": "/Freelace-app/static/media/hero-sec.3b91b1686d8ab8b650eb.png",
     "static/media/logo.png": "/Freelace-app/static/media/logo.344fd2345f8283af7ac8.png",
+    "static/media/j2.jpg": "/Freelace-app/static/media/j2.456a25d887fcf729a28c.jpg",
     "index.html": "/Freelace-app/index.html",
-    "main.d9b46d62.css.map": "/Freelace-app/static/css/main.d9b46d62.css.map",
-    "main.9bb8ce66.js.map": "/Freelace-app/static/js/main.9bb8ce66.js.map",
+    "main.d35d98c7.css.map": "/Freelace-app/static/css/main.d35d98c7.css.map",
+    "main.d7b13b4b.js.map": "/Freelace-app/static/js/main.d7b13b4b.js.map",
     "453.4cd24f5f.chunk.js.map": "/Freelace-app/static/js/453.4cd24f5f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9b46d62.css",
-    "static/js/main.9bb8ce66.js"
+    "static/css/main.d35d98c7.css",
+    "static/js/main.d7b13b4b.js"
   ]
 }
