@@ -1,5 +1,6 @@
 import React from "react";
 import hero from "../assets/hero-sec.png";
+import { Link } from "react-router-dom";
 
 function HeroSection() {
   return (
@@ -14,9 +15,12 @@ function HeroSection() {
               Forget the old rules. You can have the best people. Right now.
               Right here.
             </div>
-            <button className="border flex items-start border-red-600 bg-red-600 rounded-md p-2 px-3 md:block font-bold my-7 text-xl" >
-            Get Started
-          </button>
+            <Link
+              to="/login"
+              className="border flex items-start border-red-600 bg-red-600 rounded-md p-2 px-3 md:block font-bold my-7 text-xl"
+            >
+              Get Started
+            </Link>
           </div>
           <div className="">
             <img src={hero} className="" alt="logo" />
