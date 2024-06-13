@@ -7,11 +7,11 @@ function HeroSection() {
     <div>
       <div className="w-[100%] border-t-[1px] border-t-[#605d5d]  py-[5px]">
         <div className="Hero-sec max-w-[1170px] h-[600px] grid grid-row-2 text-white sm:mx-12  md:mx-12 lg:mx-auto mx-6 md:grid-cols-2 items-center">
-          <div className="flex mx-auto items-start flex-col justify-center">
-            <div className="font-serif font-bold text-[60px]">
+          <div className="flex mx-auto md:items-start items-center flex-col justify-center mb-5">
+            <div className="font-serif font-bold md:text-[60px] text-[50px] text-center md:text-left">
               How work <br /> should work
             </div>
-            <div className="text-l pt-4 w-[385px]">
+            <div className="text-l pt-4 w-[385px] text-center md:text-left">
               Forget the old rules. You can have the best people. Right now.
               Right here.
             </div>
@@ -22,7 +22,7 @@ function HeroSection() {
               Get Started
             </Link>
           </div>
-          <div className="">
+          <div className=" mx-7 max-w-[410px] md:w-fit flex items-center justify-center ">
             <img src={hero} className="" alt="logo" />
           </div>
         </div>

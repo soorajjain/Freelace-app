@@ -1,33 +1,35 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 
 function LoginSignup() {
   const [action, setAction] = useState("SignUp");
   return (
     <div className="h-[100vh] w-full flex items-center justify-center bg-zinc-900">
-      <div className="flex gap-8 flex-col text-white h-[600px] w-[400px] border border-red-500 rounded-xl items-center justify-center hover:border-white">
-      <Link to='/' className="px-1 mt-3">
-            <img src={logo} className="w-[200px]" alt="logo" />
-          </Link>
-        <div className="Header text-[40px] font-bold">{action}</div>
-        <div className="container flex items-center justify-center flex-col gap-7">
+      <div className="flex sm:gap-8 gap-5  flex-col text-white sm:h-[600px] h-[400px] w-[300px] sm:w-[400px] border border-red-500 rounded-xl items-center justify-center hover:border-white">
+        <Link to="/" className="px-1 mt-3">
+          <img src={logo} className="w-[200px]" alt="logo" />
+        </Link>
+        <div className="Header sm:text-[40px] text-[30px] font-bold">
+          {action}
+        </div>
+        <div className="container flex items-center justify-center flex-col sm:gap-7 gap-4 ">
           {action === "Login" ? (
             <div></div>
           ) : (
             <input
-              className=" outline-none border border-red-500 p-3 text-l px-7 bg-gray-400 placeholder-white w-[350px]"
+              className=" outline-none border border-red-500 sm:p-3 p-2 sm:text-l text-sm px-7 bg-gray-400 placeholder-white sm:w-[350px] w-[250px]"
               placeholder="Name"
             ></input>
           )}
 
           <input
-            className=" outline-none border border-red-500 p-3 px-7 text-l bg-gray-400 placeholder-white w-[350px]"
+            className=" outline-none border border-red-500 sm:p-3 p-2 sm:text-l text-sm px-7 bg-gray-400 placeholder-white sm:w-[350px] w-[250px]"
             placeholder="Email"
           ></input>
           <input
             type="text"
-            className=" outline-none border border-red-500 p-3 px-7 text-l bg-gray-400 placeholder-white w-[350px]"
+            className=" outline-none border border-red-500 sm:p-3 p-2 sm:text-l text-sm px-7 bg-gray-400 placeholder-white sm:w-[350px] w-[250px]"
             placeholder="Password"
           ></input>
         </div>
@@ -41,9 +43,9 @@ function LoginSignup() {
           </div>
         )}
 
-        <div className="flex gap-6">
+        <div className="flex sm:gap-6 gap-4">
           <button
-            className="border border-red-500 bg-red-700 p-4 rounded-3xl pt-3 px-7  hover:bg-red-400 text-l"
+            className="border border-red-500 bg-red-700 sm:p-4  md:rounded-3xl rounded-sm  sm:pt-3 sm:px-7 px-3 hover:bg-red-400 text-l"
             onClick={() => {
               setAction("SignUp");
             }}
@@ -51,7 +53,7 @@ function LoginSignup() {
             SignUp
           </button>
           <button
-            className="border border-red-500 bg-red-700 p-4 rounded-3xl pt-3 px-7 hover:bg-red-500 text-l"
+            className="border border-red-500 bg-red-700 sm:p-4  md:rounded-3xl rounded-sm sm:pt-3 sm:px-7 px-3 py-1 hover:bg-red-400 text-l"
             onClick={() => {
               setAction("Login");
             }}

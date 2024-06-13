@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Navbar(props) {
   return (
     <div className="w-full bg-zinc-900">
-      <nav className="Navbar max-w-[1170px] text-white mx-auto flex justify-between py-8 bg-zinc-900">
+      <nav className="Navbar max-w-[1170px] text-white lg:mx-auto flex justify-between py-8 bg-zinc-900 mx-3">
         <div className="flex gap-10 items-center">
           <Link to="/" className="px-1">
             <img src={logo} className="w-[200px]" alt="logo" />
@@ -14,9 +14,10 @@ function Navbar(props) {
           <Link to="/find_freelancers" className="hidden md:block">
             Find Freelancer
           </Link>
-          <Link
-            to="/find_jobs" className="hidden md:block">Find Jobs</Link>
-          <Link to="/about" className="hidden md:block">
+          <Link to="/find_jobs" className="hidden md:block">
+            Find Jobs
+          </Link>
+          <Link to="/about" className="hidden lg:block">
             About
           </Link>
         </div>
