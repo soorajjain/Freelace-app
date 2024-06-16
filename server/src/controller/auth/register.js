@@ -4,11 +4,13 @@ const router = express.Router();
 import initUserModel from "../../model/userModel.js";
 import RESPONSE from "../../config/global.js";
 import validator from "validator";
+import constants from "../../config/constants.js";
+import bcrypt from "bcrypt";
 
 router.use("/", async (req, res) => {
   try {
-    const usermodel = await initUserModel();
-    const { user_name, email, phone, password } = req.body;
+    const userModel = await initUserModel();
+    const { user_name, email, phone, password, image } = req.body;
     console.log(user_name, email, phone, password);
     let response;
 
@@ -60,19 +62,49 @@ router.use("/", async (req, res) => {
       });
     }
 
-    await usermodel.create({
+    const isExistingEmail = await userModel.find({
+      is_active: constants.STATE.ACTIVE,
+      email: email,
+    });
+
+    if (isExistingEmail.length > 0) {
+      response = RESPONSE.ALREADY_EXISTS;
+      return res.json({
+        code: response.code,
+        message: "Email ID " + response.msg,
+      });
+    }
+
+    const isExistingPhone = await userModel.find({
+      is_active: constants.STATE.ACTIVE,
+      phone: phone,
+    });
+
+    if (isExistingPhone.length > 0) {
+      response = RESPONSE.ALREADY_EXISTS;
+      return res.json({
+        code: response.code,
+        message: "phone number " + response.msg,
+      });
+    }
+
+    const encryptedPassword = await bcrypt.hash(password, constants.HASH_ROUND);
+
+    await userModel.create({
       user_name: user_name,
       email: email,
       phone: phone,
-      password: password,
+      password: encryptedPassword,
+      image: image,
     });
 
     res.json((response = RESPONSE.SUCCESS));
   } catch (error) {
-    console.log("register", error);
+    console.log(error);
+    response = RESPONSE.UNKNOWN_ERROR;
     return res.json({
       code: response.code,
-      msg: "Register page" + response.msg,
+      msg: "Register page " + response.msg,
     });
   }
 });
