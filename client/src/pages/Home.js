@@ -1,5 +1,5 @@
 import React from "react";
-import HeroSection from "../pages/HeroSection";
+import HeroSection from "./HeroSection";
 import Howitwork from "./Main/Howitworks/Howitwork";
 
 function Home() {
