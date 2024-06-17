@@ -46,7 +46,7 @@ router.use("/", async (req, res) => {
       email: email,
     });
 
-    
+     
   } catch (error) {
     console.log(error);
     response = RESPONSE.UNKNOWN_ERROR;
