@@ -46,29 +46,7 @@ router.use("/", async (req, res) => {
       email: email,
     });
 
-    if (data && (await bcrypt.compare(password, data.password))) {
-      const token = jwt.sign(
-        {
-          id: data._id,
-          name: data.user_name,
-        },
-        process.env.TOKENKEY
-      );
-      console.log(token);
-
-      response = RESPONSE.SUCCESS;
-      return res.json({
-        code: response.code,
-        msg: response.msg,
-        data: token,
-      });
-    } else {
-      response = RESPONSE.INVALID_DATA;
-      return res.json({
-        code: response.code,
-        msg: "login credentials" + response.msg,
-      });
-    }
+    
   } catch (error) {
     console.log(error);
     response = RESPONSE.UNKNOWN_ERROR;
