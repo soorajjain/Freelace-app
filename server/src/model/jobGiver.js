@@ -44,4 +44,4 @@ const initUserModel = async () => {
   }
 };
 
-export default initUserModel;
+export default q;

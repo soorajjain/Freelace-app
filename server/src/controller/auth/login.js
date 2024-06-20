@@ -10,7 +10,7 @@ import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
 
-router.use("/", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const userModel = await initUserModel();
     const { email, password } = req.body;
@@ -45,8 +45,6 @@ router.use("/", async (req, res) => {
       is_active: constants.STATE.ACTIVE,
       email: email,
     });
-
-     
   } catch (error) {
     console.log(error);
     response = RESPONSE.UNKNOWN_ERROR;

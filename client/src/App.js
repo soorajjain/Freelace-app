@@ -1,10 +1,16 @@
 import React from "react";
 import About from "./pages/Main/About";
 import Home from "./pages/Home";
-import FindFreelancers from "./pages/FindFreelancers";
+import FindFreelancers from "./pages/clientJobGiver/FindFreelancers";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LoginSignup from "./pages/LoginSignup";
-import FindJobs from "./pages/FindJobs";
+import Signup from "./pages/loginSignup/Signup";
+import Login from "./pages/loginSignup/Login";
+
+
+// import Navfree from "./pages/freelancersJobTakers/NavbarFreelancers";
+// import Navclient from "./pages/clientJobGiver/NavbarClient";
+
+import FindJobs from "./pages/freelancersJobTakers/FindJobs";
 import Layout from "./components/Layouts/Layout";
 
 function App() {
@@ -20,7 +26,16 @@ function App() {
               </Layout>
             }
           />
-          <Route path="/login" element={<LoginSignup />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+
+          {/* trials */}
+
+          {/* <Route path="/navfree" element={<Navfree />} /> */}
+          {/* <Route path="/navclient" element={<Navclient />} /> */}
+
+          {/* trials */}
+
           <Route
             path="/about"
             element={
@@ -48,7 +63,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </>
-  )
+  );
 }
 
 export default App;

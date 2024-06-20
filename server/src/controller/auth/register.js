@@ -7,7 +7,7 @@ import validator from "validator";
 import constants from "../../config/constants.js";
 import bcrypt from "bcrypt";
 
-router.use("/", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const userModel = await initUserModel();
     const { user_name, email, phone, password, image } = req.body;
@@ -97,6 +97,19 @@ router.use("/", async (req, res) => {
       password: encryptedPassword,
       image: image,
     });
+
+
+
+    // await userModel.create({
+    //   user_name: "user_name",
+    //   email: "email",
+    //   phone: "phone",
+    //   role:1,
+    //   password: encryptedPassword,
+    //   image: image,
+    // });
+
+
 
     res.json((response = RESPONSE.SUCCESS));
   } catch (error) {
