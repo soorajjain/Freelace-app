@@ -1,8 +1,8 @@
 import { Schema } from "mongoose";
 import mongoose from "mongoose";
 
-const userModel = {
-  user_name: {
+const jobTakerModel = {
+  name: {
     type: String,
     required: true,
   },
@@ -20,12 +20,8 @@ const userModel = {
   },
   image: {
     type: [String],
-    data: Buffer,
+    // data: Buffer,
     required: true,
-  },
-  teacher_id: {
-    type: Schema.Types.ObjectId,
-    ref: "teacherdata",
   },
   is_active: {
     type: String,
@@ -34,14 +30,14 @@ const userModel = {
 };
 
 let user = null;
-const initUserModel = async () => {
+const initJobTakerModel = async () => {
   try {
     if (user) return user;
-    user = mongoose.model("user_model", userModel);
+    user = mongoose.model("job_Takers", jobTakerModel);
     return user;
   } catch (error) {
     console.log("Error found in Student model", error);
   }
 };
 
-export default use;
+export default initJobTakerModel;

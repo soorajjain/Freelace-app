@@ -11,16 +11,22 @@ function SignupJobGiver() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  //   console.log(name, email, password);
+  console.log(name, phone, email, password);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/register", { name, email, password })
+      .post("http://localhost:3002/api/auth/jobGiverRegister", {
+        name,
+        phone,
+        email,
+        password,
+      })
       .then((res) => {
         console.log(res);
-        alert("done");
-        navigate("/login");
+        if (res.data.code === 400) {
+          navigate("/loginJobGiver");
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -42,22 +48,26 @@ function SignupJobGiver() {
           <input
             className=" outline-none border border-red-500 sm:p-3 p-2 sm:text-l text-sm px-7 bg-gray-400 placeholder-white sm:w-[350px] w-[250px]"
             placeholder="Name"
+            onChange={(e) => setName(e.target.value)}
           ></input>
 
           <input
             className=" outline-none border border-red-500 sm:p-3 p-2 sm:text-l text-sm px-7 bg-gray-400 placeholder-white sm:w-[350px] w-[250px]"
             placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
           ></input>
 
           <input
             className=" outline-none border border-red-500 sm:p-3 p-2 sm:text-l text-sm px-7 bg-gray-400 placeholder-white sm:w-[350px] w-[250px]"
             placeholder="Phone"
+            onChange={(e) => setPhone(e.target.value)}
           ></input>
 
           <input
             type="text"
             className=" outline-none border border-red-500 sm:p-3 p-2 sm:text-l text-sm px-7 bg-gray-400 placeholder-white sm:w-[350px] w-[250px]"
             placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
           ></input>
         </div>
 

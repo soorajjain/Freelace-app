@@ -1,17 +1,17 @@
 import express, { response } from "express";
 const router = express.Router();
 
-import initJobGiverModel from "../../model/jobGiver.js";
-import RESPONSE from "../../config/global.js";
+import initJobGiverModel from "../../../model/jobGiver.js";
+import RESPONSE from "../../../config/global.js";
 import validator from "validator";
-import constants from "../../config/constants.js";
+import constants from "../../../config/constants.js";
 import bcrypt from "bcrypt";
 
 router.post("/", async (req, res) => {
   try {
     const jobGiverModel = await initJobGiverModel();
     const { name, email, phone, password } = req.body;
-    console.log(name, email, phone, password);
+    // console.log(name, email, phone, password);
     let response;
 
     if (!name || name == "") {
@@ -62,7 +62,7 @@ router.post("/", async (req, res) => {
       });
     }
 
-    const isExistingEmail = await userModel.find({
+    const isExistingEmail = await jobGiverModel.find({
       is_active: constants.STATE.ACTIVE,
       email: email,
     });
@@ -75,7 +75,7 @@ router.post("/", async (req, res) => {
       });
     }
 
-    const isExistingPhone = await userModel.find({
+    const isExistingPhone = await jobGiverModel.find({
       is_active: constants.STATE.ACTIVE,
       phone: phone,
     });
