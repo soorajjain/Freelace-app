@@ -8,7 +8,7 @@ function SignupJobTaker() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("")
   const navigate = useNavigate();
 
   console.log(name, phone, email, password);
