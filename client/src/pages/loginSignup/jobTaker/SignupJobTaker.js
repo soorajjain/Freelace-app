@@ -24,7 +24,7 @@ function SignupJobTaker() {
       })
       .then((res) => {
         console.log(res);
-        if (res.data.code === 400) {
+        if (res.data.code === "400") {
           navigate("/loginJobTaker");
         }
       })
