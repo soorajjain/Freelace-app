@@ -33,7 +33,7 @@ let user = null;
 const initJobGiverModel = async () => {
   try {
     if (user) return user;
-    user = mongoose.model("jobGiverModel", jobGiverModel);
+    user = mongoose.model("job_giver", jobGiverModel);
     return user;
   } catch (error) {
     console.log("Error found in job giver model", error);
