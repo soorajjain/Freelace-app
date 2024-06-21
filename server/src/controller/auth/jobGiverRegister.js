@@ -1,7 +1,7 @@
 import express, { response } from "express";
 const router = express.Router();
 
-import initUserModel from "../../model/userModel.js";
+import initJobGiverModel from "../../model/jobGiver.js";
 import RESPONSE from "../../config/global.js";
 import validator from "validator";
 import constants from "../../config/constants.js";
@@ -9,12 +9,12 @@ import bcrypt from "bcrypt";
 
 router.post("/", async (req, res) => {
   try {
-    const userModel = await initUserModel();
-    const { user_name, email, phone, password, image } = req.body;
-    console.log(user_name, email, phone, password);
+    const jobGiverModel = await initJobGiverModel();
+    const { name, email, phone, password } = req.body;
+    console.log(name, email, phone, password);
     let response;
 
-    if (!user_name || user_name == "") {
+    if (!name || name == "") {
       response = RESPONSE.MANDATORY_PARAMS;
       return res.json({
         code: response.code,
@@ -90,15 +90,12 @@ router.post("/", async (req, res) => {
 
     const encryptedPassword = await bcrypt.hash(password, constants.HASH_ROUND);
 
-    await userModel.create({
-      user_name: user_name,
+    await jobGiverModel.create({
+      name: name,
       email: email,
       phone: phone,
       password: encryptedPassword,
-      image: image,
     });
-
-
 
     // await userModel.create({
     //   user_name: "user_name",
@@ -108,8 +105,6 @@ router.post("/", async (req, res) => {
     //   password: encryptedPassword,
     //   image: image,
     // });
-
-
 
     res.json((response = RESPONSE.SUCCESS));
   } catch (error) {

@@ -31,13 +31,13 @@ function Navbar() {
             How it works
           </a>
 
-          <Link to="/" className="hidden lg:block  hover:text-red-500">
+          <Link to="" className="hidden lg:block  hover:text-red-500">
             About
           </Link>
         </div>
         <div className="flex gap-6 items-center mx-4">
           <Link
-            to="/signup"
+            to="/redirect"
             className="border  border-red-900 bg-red-700 hover:bg-red-500 rounded-md p-2 px-6 hidden md:block "
           >
             SignUp
