@@ -12,4 +12,4 @@ providing a comprehensive and integrated solution for all stakeholders.
 
 - Front End : React JS
 - Back End : Node JS, Express JS
-- Database : MongoDB
+- Database : MongoDB compass
