@@ -19,7 +19,7 @@ function Employers() {
             from quality Freelancers.
           </div>
           <Link
-            to="/login"
+            to="/redirect"
             className="border flex items-start border-red-900 bg-red-700 hover:bg-red-500 rounded-md p-2 px-5 md:block my-7 text-l"
           >
             Get Started

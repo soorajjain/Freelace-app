@@ -17,7 +17,7 @@ function Navbar() {
     }
   };
   return (
-    <div className="w-full bg-zinc-900">
+    <div id="home" className="w-full bg-zinc-900">
       <nav className="Navbar max-w-[1170px] text-white lg:mx-auto flex justify-between py-8 bg-zinc-900 mx-3">
         <div className="flex gap-10 items-center">
           <Link to="/" className="px-1">
@@ -28,7 +28,7 @@ function Navbar() {
             onClick={handleScroll}
             className="hidden md:block hover:text-red-500"
           >
-            How it works
+            How Freelance Hub works
           </a>
 
           <Link to="" className="hidden lg:block  hover:text-red-500">

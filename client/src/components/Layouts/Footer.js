@@ -3,6 +3,18 @@ import favicon from "../../assets/favicon.png";
 import { Link } from "react-router-dom";
 
 function Footer() {
+  const handleScroll = (event) => {
+    event.preventDefault();
+    const targetId = event.currentTarget.getAttribute("href").substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <div>
       <div className="w-[100%] border-t-[1px] border-t-[#605d5d] ">
@@ -19,7 +31,10 @@ function Footer() {
               </h1>
               <h1>
                 Made with love by&nbsp;
-                <a className="underline" href="https://github.com/soorajjain/Freelance-app.git">
+                <a
+                  className="underline"
+                  href="https://github.com/soorajjain/Freelance-app.git"
+                >
                   Sooraj jain
                 </a>
               </h1>
@@ -27,16 +42,20 @@ function Footer() {
             <div className="block-2 flex gap-10 items-start justify-start">
               <div className="flex flex-col gap-4">
                 <h1 className="font-bold">Navigate</h1>
-                <Link to="/" className="hover:underline">
+                <a
+                  href="#home"
+                  onClick={handleScroll}
+                  className="hover:underline"
+                >
                   Home
-                </Link>
-                <Link to="/find_jobs" className="hover:underline">
+                </a>
+                <Link to="/redirect" className="hover:underline">
                   Post a Job
                 </Link>
-                <Link to="/find_freelancers" className="hover:underline">
+                <Link to="/redirect" className="hover:underline">
                   Find a Freelancer
                 </Link>
-                <Link to="/find_jobs" className="hover:underline">
+                <Link to="/redirect" className="hover:underline">
                   Find a Job
                 </Link>
               </div>
@@ -46,9 +65,13 @@ function Footer() {
                 <Link to="/about" className="hover:underline">
                   About Freelance Hub
                 </Link>
-                <Link to="/" className="hover:underline">
-                  How it works
-                </Link>
+                <a
+                  href="#how-it-works"
+                  onClick={handleScroll}
+                  className="hover:underline"
+                >
+                  How Freelance Hub works
+                </a>
               </div>
             </div>
           </footer>

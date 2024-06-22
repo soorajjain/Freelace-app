@@ -29,7 +29,7 @@ function SignupJobGiver() {
         showToast(res.data.code);
         if (res.data.code === "400") {
           setTimeout(() => {
-            navigate("/loginJobTaker");
+            navigate("/loginJobGiver");
           }, 2000);
         }
       })
