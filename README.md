@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Freelance Hub [Freelance Marketplace]
+=======
+# Freelance Hub
+>>>>>>> refs/remotes/origin/main
 
 Freelance Hub is a robust and user-friendly freelance marketplace application designed to
 bridge the gap between freelancers and clients. The platform offers distinct modules for
@@ -9,7 +13,15 @@ milestones. Freelance Hub aims to enhance the freelance marketplace experience b
 providing a comprehensive and integrated solution for all stakeholders.
 
 ## PLATFORM/TOOLS/LANGUAGE TO BE USED
+<<<<<<< HEAD
 
 - Front End : React JS
 - Back End : Node JS, Express JS
 - Database : MongoDB compass
+=======
+- Front End : React JS
+- Back End : Node JS, Express JS
+- Database : MongoDB
+
+
+>>>>>>> refs/remotes/origin/main
