@@ -2,6 +2,9 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import showToast from "../showToast";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -13,11 +16,17 @@ function Login() {
     e.preventDefault();
     axios
       .post("http://localhost:3002/api/auth/jobGiverLogin", { email, password })
-      .then((result) => {
-        console.log(result);
-        if (result.data.code === "400") {
-          navigate("/find_freelancers");
+      .then((res) => {
+        showToast(res.data.code);
+        if (res.data.code === "400") {
+          setTimeout(() => {
+            navigate("/find_freelancers");
+          }, 1000);
         }
+      })
+      .catch((err) => {
+        console.log(err);
+        showToast("500");
       });
   };
 
@@ -47,8 +56,11 @@ function Login() {
         </div>
 
         <div className="flex sm:gap-6 gap-4">
-          <button className="border border-red-500 bg-red-700 sm:p-4  md:rounded-3xl rounded-sm sm:pt-3 sm:px-7 px-3 py-1 hover:bg-red-400 text-l">
-            Login
+          <button
+            type="submit"
+            className="border border-red-500 bg-red-700 sm:p-4  md:rounded-3xl rounded-sm sm:pt-3 sm:px-10 px-3 h-[40px] hover:bg-red-400 text-l flex items-center justify-center"
+          >
+            <h1>Login</h1>
           </button>
         </div>
 
@@ -60,6 +72,18 @@ function Login() {
           </Link>
         </div>
       </form>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 }

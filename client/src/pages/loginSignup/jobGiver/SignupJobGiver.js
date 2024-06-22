@@ -3,6 +3,9 @@ import logo from "../../../assets/logo.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import showToast from "../showToast";
 
 function SignupJobGiver() {
   const [name, setName] = useState("");
@@ -11,7 +14,7 @@ function SignupJobGiver() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  console.log(name, phone, email, password);
+  // console.log(name, phone, email, password);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,8 +26,11 @@ function SignupJobGiver() {
         password,
       })
       .then((res) => {
+        showToast(res.data.code);
         if (res.data.code === "400") {
-          navigate("/loginJobGiver");
+          setTimeout(() => {
+            navigate("/loginJobTaker");
+          }, 2000);
         }
       })
       .catch((err) => {
@@ -35,7 +41,7 @@ function SignupJobGiver() {
     <div className="h-[100vh] w-full flex items-center justify-center bg-zinc-900">
       <form
         onSubmit={handleSubmit}
-        className="flex sm:gap-8 gap-5  flex-col text-white sm:h-[600px] h-[400px] w-[300px] sm:w-[400px] border border-red-500 rounded-xl items-center justify-center hover:border-white"
+        className="flex sm:gap-8 gap-5  flex-col text-white sm:h-[650px] h-[400px] w-[300px] sm:w-[400px] border border-red-500 rounded-xl items-center justify-center hover:border-white"
       >
         <Link to="/" className="px-1 mt-3">
           <img src={logo} className="w-[200px]" alt="logo" />
@@ -71,9 +77,24 @@ function SignupJobGiver() {
         </div>
 
         <div className="flex sm:gap-6 gap-4">
-          <button className="border border-red-500 bg-red-700 sm:p-4  md:rounded-3xl rounded-sm  sm:pt-3 sm:px-7 px-3 hover:bg-red-400 text-l">
-            SignUp
+          <button
+            type="submit"
+            className="border border-red-500 bg-red-700 sm:p-4  md:rounded-3xl rounded-sm sm:pt-3 sm:px-10 px-3 h-[40px] hover:bg-red-400 text-l flex items-center justify-center"
+          >
+            <h1>Button</h1>
           </button>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
         </div>
 
         <div className="text-center">
@@ -83,6 +104,18 @@ function SignupJobGiver() {
           </Link>
         </div>
       </form>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 }
