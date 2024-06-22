@@ -35,7 +35,7 @@ function LoginJobTaker() {
     <div className="h-[100vh] w-full flex items-center justify-center bg-zinc-900">
       <form
         onSubmit={handleSubmit}
-        className="flex sm:gap-8 gap-5  flex-col text-white sm:h-[600px] h-[400px] w-[300px] sm:w-[400px] border border-red-500 rounded-xl items-center justify-center hover:border-white"
+        className="flex sm:gap-8 gap-5  flex-col text-white sm:h-[550px] h-[400px] w-[300px] sm:w-[400px] border border-red-500 rounded-xl items-center justify-center hover:border-white"
       >
         <Link to="/" className="px-1 mt-3">
           <img src={logo} className="w-[200px]" alt="logo" />

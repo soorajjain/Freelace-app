@@ -34,7 +34,7 @@ function Login() {
     <div className="h-[100vh] w-full flex items-center justify-center bg-zinc-900">
       <form
         onSubmit={handleSubmit}
-        className="flex sm:gap-8 gap-5  flex-col text-white sm:h-[600px] h-[400px] w-[300px] sm:w-[400px] border border-red-500 rounded-xl items-center justify-center hover:border-white"
+        className="flex sm:gap-8 gap-5  flex-col text-white sm:h-[550px] h-[400px] w-[300px] sm:w-[400px] border border-red-500 rounded-xl items-center justify-center hover:border-white"
       >
         <div className="Header sm:text-[40px] text-[30px] font-bold">Login</div>
         <div className="container flex items-center justify-center flex-col sm:gap-7 gap-4 ">

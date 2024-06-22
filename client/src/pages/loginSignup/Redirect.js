@@ -1,10 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 function Redirect() {
   return (
     <div className=" bg-zinc-900 mx-auto">
-      <div className="redirect max-w-[1170px] h-screen mx-auto text-white flex justify-center items-center flex-col">
+      <div className="redirect max-w-[570px] h-screen mx-auto text-white flex justify-center items-center flex-col">
+        <Link to="/" className="px-1">
+          <img src={logo} className="w-[200px] mb-10" alt="logo" />
+        </Link>
+        
         <div className="flex gap-7 justify-center items-center">
           <Link
             to="/signupJobGiver"
