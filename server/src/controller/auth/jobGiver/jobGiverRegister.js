@@ -1,6 +1,7 @@
 import express, { response } from "express";
 const router = express.Router();
 
+
 import initJobGiverModel from "../../../model/jobGiver.js";
 import RESPONSE from "../../../config/global.js";
 import validator from "validator";
@@ -115,6 +116,7 @@ router.post("/", async (req, res) => {
       msg: "Register page " + response.msg,
     });
   }
+
 });
 
 export default router;
